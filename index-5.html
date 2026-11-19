@@ -1,0 +1,352 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#102b50"><title>ScholarshipMatch — Make college more affordable</title><meta name="description" content="Explore trusted scholarship resources, organize deadlines, and learn ways to lower college costs."><style>
+:root{--navy:#102b50;--blue:#1764bd;--pale:#f3f7fc;--ink:#182a40;--muted:#5d7086;--line:#dce5f0;--green:#147a57}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:var(--ink);background:#fff;line-height:1.55}a{color:var(--blue)}.wrap{max-width:1100px;margin:auto;padding:0 22px}header{background:white;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:10}.nav{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:72px}.logo{font-size:1.28rem;font-weight:850;letter-spacing:-.04em;color:var(--navy);text-decoration:none}.logo span{color:var(--blue)}nav{display:flex;gap:22px;flex-wrap:wrap}nav a{font-size:.92rem;text-decoration:none;color:var(--ink);font-weight:600}nav a:hover{text-decoration:underline}.hero{background:linear-gradient(125deg,#102b50,#1d4e82);color:#fff;padding:85px 0 90px}.eyebrow{color:#b8d8ff;text-transform:uppercase;letter-spacing:.13em;font-weight:800;font-size:.78rem}.hero h1{font-size:clamp(2.5rem,6vw,4.7rem);letter-spacing:-.055em;line-height:1.09;margin:15px 0;max-width:780px}.hero p{max-width:630px;color:#d8e7fa;font-size:1.13rem}.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:26px}.btn{display:inline-block;background:var(--blue);color:#fff;border:0;border-radius:10px;padding:13px 20px;text-decoration:none;font:inherit;font-weight:750;cursor:pointer}.btn:hover{filter:brightness(1.08)}.btn.light{background:#fff;color:var(--navy)}.btn.outline{background:transparent;color:#fff;border:1px solid #9cb9dc}.section{padding:70px 0}.section.alt{background:var(--pale)}h2{font-size:clamp(1.7rem,4vw,2.4rem);letter-spacing:-.035em;line-height:1.2;margin:0 0 12px}.intro{color:var(--muted);max-width:730px;margin:0 0 30px}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:24px;box-shadow:0 5px 20px #102b5008}.card h3{margin:10px 0 7px}.card p{color:var(--muted);margin:0 0 16px}.symbol{font-size:1.7rem}.small{font-size:.9rem;color:var(--muted)}.pill{display:inline-block;background:#e7f5ee;color:#116244;border-radius:999px;padding:5px 10px;font-size:.78rem;font-weight:800}.form{display:grid;grid-template-columns:repeat(2,1fr);gap:15px}.field{display:flex;flex-direction:column;gap:5px}.field label{font-size:.9rem;font-weight:700}.field input,.field select{width:100%;border:1px solid #b7c7d9;border-radius:9px;padding:12px;background:#fff;font:inherit;color:var(--ink)}.form .wide{grid-column:1/-1}.result{display:none;margin-top:22px;padding:22px;background:#edf6ff;border:1px solid #b9d7f7;border-radius:12px}.result.show{display:block}.result ul{margin-bottom:0}.resource{display:flex;justify-content:space-between;gap:20px;align-items:flex-start}.resource a{font-weight:750}.resource h3{margin-top:0}.scholarship-tools{display:flex;gap:12px;flex-wrap:wrap;margin:22px 0}.scholarship-tools input,.scholarship-tools select{border:1px solid #b7c7d9;border-radius:9px;padding:11px 12px;font:inherit;background:#fff;color:var(--ink);min-width:190px}.scholarship-card{display:flex;flex-direction:column;gap:10px}.scholarship-card[hidden]{display:none}.scholarship-card .meta{display:flex;gap:8px;flex-wrap:wrap}.tag{display:inline-block;background:#edf3fa;color:#294969;border-radius:999px;padding:4px 9px;font-size:.76rem;font-weight:750}.scholarship-card .award{font-size:1.45rem;font-weight:850;color:var(--navy);letter-spacing:-.03em}.scholarship-card .details{font-size:.91rem;color:var(--muted)}.scholarship-card .apply{margin-top:auto}.verified{color:#116244;background:#e7f5ee}.closing{color:#8b4d00;background:#fff2d9}.empty-state{padding:18px;background:#f3f7fc;border-radius:10px;color:var(--muted)}.notice{border-left:4px solid #d29b29;background:#fff8e8;padding:16px 20px;border-radius:6px;margin-top:20px}.tracker{display:grid;grid-template-columns:1fr 1fr auto;gap:12px;align-items:end}.tracker-list{padding:0;list-style:none}.tracker-list li{padding:14px 0;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;align-items:center;gap:12px}.tracker-list small{color:var(--muted)}.delete{background:#fff;border:1px solid #c7d4e3;border-radius:8px;padding:7px 11px;cursor:pointer}.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.step{padding:22px;border-left:3px solid var(--blue);background:var(--pale);border-radius:8px}.step strong{display:block;margin-bottom:8px}footer{background:#0d2341;color:#c4d5e9;padding:30px 0}footer a{color:#e1eeff}footer .wrap{display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap}@media(max-width:760px){.grid,.steps{grid-template-columns:1fr}.nav{align-items:flex-start;padding:14px 0;flex-direction:column;gap:8px}nav{gap:12px}.hero{padding:58px 0}.section{padding:48px 0}.form,.tracker{grid-template-columns:1fr}.form .wide{grid-column:auto}.resource{display:block}}
+
+.guide-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;margin-top:24px}
+.guide-card{background:#fff;border:1px solid var(--line);border-radius:15px;padding:22px}
+.guide-card h3{margin:0 0 10px;color:var(--navy)}
+.guide-card p{color:var(--muted)}
+.guide-card ul{padding-left:20px}
+.guide-card li{margin:8px 0}
+.guide-card a{font-weight:700}
+.callout{background:#edf6ff;border:1px solid #c8def6;border-radius:12px;padding:18px;margin:18px 0}
+.warning{background:#fff5e8;border-left:4px solid #d29b29;border-radius:7px;padding:16px 18px;margin:18px 0}
+.glossary{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+.glossary div{background:#f3f7fc;padding:14px;border-radius:9px}
+.calculator{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;align-items:end}
+.calc-result{background:#edf6ff;border:1px solid #c8def6;border-radius:12px;padding:18px;margin-top:16px}
+.calc-result strong{font-size:1.45rem;color:var(--navy)}
+.guide-card details{border-top:1px solid var(--line);padding:12px 0}
+.guide-card summary{font-weight:750;cursor:pointer}
+@media(max-width:760px){.guide-grid,.glossary,.calculator{grid-template-columns:1fr}}
+</style></head><body>
+<header><div class="wrap nav"><a class="logo" href="#home">Scholarship<span>Match</span></a><nav aria-label="Main navigation"><a href="#find">Find scholarships</a><a href="#listings">Browse awards</a><a href="#resources">Trusted resources</a><a href="#tracker">Deadline tracker</a><a href="#save">College money guide</a></nav></div></header>
+<main><section class="hero" id="home"><div class="wrap"><div class="eyebrow">A free college affordability starting point</div><h1>College should cost less.</h1><p>Discover trustworthy scholarship resources, find financial aid information that fits your situation, and keep your application deadlines organized—all in one place.</p><div class="actions"><a class="btn light" href="#find">Explore opportunities</a><a class="btn outline" href="#tracker">Track a deadline</a></div><p class="small" style="color:#c2d6ef;margin-top:22px">No account required · Free to use · Built for future, transfer, and current students</p></div></section>
+<section class="section" id="find"><div class="wrap"><h2>Start with your situation</h2><p class="intro">Tell us your student status, state of legal residence, and unweighted GPA. We'll use those details to narrow the starter listings and point you toward relevant official resources. This first version provides an initial match—not a guarantee of eligibility or a search of every scholarship.</p><div class="card"><form class="form" id="matchForm"><div class="field"><label for="status">Student status</label><select id="status" required><option value="future">Applying to college</option><option value="transfer">Transferring colleges</option><option value="current">Already in college</option></select></div><div class="field"><label for="state">State of legal residence</label><select id="state" required><option value="">Choose your state</option><option value="AL">Alabama</option><option value="AK">Alaska</option><option value="AZ">Arizona</option><option value="AR">Arkansas</option><option value="CA">California</option><option value="CO">Colorado</option><option value="CT">Connecticut</option><option value="DE">Delaware</option><option value="FL">Florida</option><option value="GA">Georgia</option><option value="HI">Hawaii</option><option value="ID">Idaho</option><option value="IL">Illinois</option><option value="IN">Indiana</option><option value="IA">Iowa</option><option value="KS">Kansas</option><option value="KY">Kentucky</option><option value="LA">Louisiana</option><option value="ME">Maine</option><option value="MD">Maryland</option><option value="MA">Massachusetts</option><option value="MI">Michigan</option><option value="MN">Minnesota</option><option value="MS">Mississippi</option><option value="MO">Missouri</option><option value="MT">Montana</option><option value="NE">Nebraska</option><option value="NV">Nevada</option><option value="NH">New Hampshire</option><option value="NJ">New Jersey</option><option value="NM">New Mexico</option><option value="NY">New York</option><option value="NC">North Carolina</option><option value="ND">North Dakota</option><option value="OH">Ohio</option><option value="OK">Oklahoma</option><option value="OR">Oregon</option><option value="PA">Pennsylvania</option><option value="RI">Rhode Island</option><option value="SC">South Carolina</option><option value="SD">South Dakota</option><option value="TN">Tennessee</option><option value="TX">Texas</option><option value="UT">Utah</option><option value="VT">Vermont</option><option value="VA">Virginia</option><option value="WA">Washington</option><option value="WV">West Virginia</option><option value="WI">Wisconsin</option><option value="WY">Wyoming</option><option value="DC">Washington, D.C.</option></select><span class="small">Choose the state where you are a legal resident—not necessarily the state where your college is located. State aid rules vary.</span></div><div class="field"><label for="gpa">Unweighted GPA (4.0 scale)</label><input id="gpa" type="number" min="0" max="4" step="0.01" inputmode="decimal" placeholder="e.g., 3.6" required><span class="small">Use your unweighted GPA on a 4.0 scale. If you only know a weighted GPA, check your transcript for the unweighted value.</span></div><div class="field"><label for="interest">Main goal</label><select id="interest"><option value="scholarships">Find scholarships</option><option value="tuition">Lower tuition</option><option value="transfer">Explore transfer aid</option></select></div><div class="field"><label for="major">Major or interest (optional)</label><input id="major" maxlength="80" placeholder="e.g., Business, Nursing, Engineering"></div><div class="wide"><button class="btn" type="submit">Show my starting points</button></div></form><div id="matchResult" class="result" aria-live="polite"></div></div></div></section>
+<section class="section alt" id="listings"><div class="wrap"><h2>Scholarships you can apply for</h2><p class="intro">A starter collection of opportunities whose current-cycle details were checked against the provider's official page on November 18, 2026. Enter your GPA and state above to narrow these listings. Use the official application link to confirm all rules before applying. Eligibility labels are summaries, not guarantees.</p><div class="scholarship-tools"><input id="scholarshipSearch" type="search" placeholder="Search scholarships or keywords" aria-label="Search scholarships"><select id="scholarshipStatus" aria-label="Filter by student status"><option value="all">All student types</option><option value="future">Applying to college</option><option value="transfer">Transfer students</option><option value="current">Current college students</option></select><select id="scholarshipState" aria-label="Filter by state"><option value="all">All states</option><option value="AL">Alabama</option><option value="AK">Alaska</option><option value="AZ">Arizona</option><option value="AR">Arkansas</option><option value="CA">California</option><option value="CO">Colorado</option><option value="CT">Connecticut</option><option value="DE">Delaware</option><option value="FL">Florida</option><option value="GA">Georgia</option><option value="HI">Hawaii</option><option value="ID">Idaho</option><option value="IL">Illinois</option><option value="IN">Indiana</option><option value="IA">Iowa</option><option value="KS">Kansas</option><option value="KY">Kentucky</option><option value="LA">Louisiana</option><option value="ME">Maine</option><option value="MD">Maryland</option><option value="MA">Massachusetts</option><option value="MI">Michigan</option><option value="MN">Minnesota</option><option value="MS">Mississippi</option><option value="MO">Missouri</option><option value="MT">Montana</option><option value="NE">Nebraska</option><option value="NV">Nevada</option><option value="NH">New Hampshire</option><option value="NJ">New Jersey</option><option value="NM">New Mexico</option><option value="NY">New York</option><option value="NC">North Carolina</option><option value="ND">North Dakota</option><option value="OH">Ohio</option><option value="OK">Oklahoma</option><option value="OR">Oregon</option><option value="PA">Pennsylvania</option><option value="RI">Rhode Island</option><option value="SC">South Carolina</option><option value="SD">South Dakota</option><option value="TN">Tennessee</option><option value="TX">Texas</option><option value="UT">Utah</option><option value="VT">Vermont</option><option value="VA">Virginia</option><option value="WA">Washington</option><option value="WV">West Virginia</option><option value="WI">Wisconsin</option><option value="WY">Wyoming</option><option value="DC">Washington, D.C.</option></select></div><div class="grid" id="scholarshipGrid">
+<article class="card scholarship-card" data-status="current,future,transfer" data-states="all" data-min-gpa="unknown" data-search="apia scholars asian pacific islander undergraduate financial need 2500 20000"><div class="meta"><span class="tag verified">Official source checked</span><span class="tag">National</span></div><h3>APIA Scholarship — 2027–28</h3><div class="award">$2,500–$20,000</div><p class="details"><strong>Deadline:</strong> January 15, 2027, 11:59 p.m. ET<br><strong>Who may apply:</strong> Undergraduate degree students enrolling or continuing in fall 2027 at an accredited U.S. college. Applicants must meet the provider's citizenship/residency rules and demonstrate high financial need. Associate and bachelor's students may qualify; community college students are included.</p><p class="small">Application cycle opened November 15, 2026. Award sizes and terms vary.</p><a class="btn apply" href="https://apiascholars.org/scholarships/" target="_blank" rel="noopener noreferrer">Official details &amp; apply ↗</a></article>
+<article class="card scholarship-card" data-status="transfer" data-states="all" data-min-gpa="3.5" data-search="jack kent cooke undergraduate transfer community college 55000 sophomore 3.5 gpa financial need"><div class="meta"><span class="tag verified">Official source checked</span><span class="tag">Transfer</span><span class="tag closing">Deadline approaching</span></div><h3>Jack Kent Cooke Undergraduate Transfer Scholarship</h3><div class="award">Up to $55,000/year</div><p class="details"><strong>Deadline:</strong> December 9, 2026, 11:59 p.m. ET<br><strong>Who may apply:</strong> Community-college or two-year-institution students with sophomore status by January 1, 2027 (or recent graduates), planning to transfer to a bachelor's program in fall 2027. Minimum 3.50 GPA and demonstrated unmet financial need. Students who have attended a four-year institution generally are not eligible.</p><p class="small">Highly competitive; around 65 awards are made annually.</p><a class="btn apply" href="https://www.jkcf.org/our-scholarships/undergraduate-transfer-scholarship/" target="_blank" rel="noopener noreferrer">Official details &amp; apply ↗</a></article>
+<article class="card scholarship-card" data-status="future" data-states="all" data-min-gpa="unknown" data-search="burger king scholars high school senior employee family 1000 60000 2027 2028"><div class="meta"><span class="tag verified">Official source checked</span><span class="tag">National</span></div><h3>Burger King Scholars Program — 2027–28</h3><div class="award">$1,000–$60,000</div><p class="details"><strong>Deadline:</strong> December 15, 2026, or earlier if the application cap is reached<br><strong>Who may apply:</strong> Graduating high school seniors planning full-time enrollment in an accredited postsecondary institution; separate eligibility tracks exist for Burger King employees and eligible family members. GPA and other requirements apply.</p><p class="small">The provider says only the first 30,000 community applications will be reviewed, so applying early matters.</p><a class="btn apply" href="https://www.burgerkingfoundation.org/programs/burger-king-sm-scholars" target="_blank" rel="noopener noreferrer">Official details &amp; apply ↗</a></article>
+<article class="card scholarship-card" data-status="future" data-states="all" data-min-gpa="2.5" data-search="equitable excellence scholarship public high school senior 5000 20000 2.5 gpa"><div class="meta"><span class="tag verified">Official source checked</span><span class="tag">National</span></div><h3>Equitable Excellence Scholarship</h3><div class="award">$5,000/year</div><p class="details"><strong>Deadline:</strong> December 22, 2026, 3 p.m. CT<br><strong>Who may apply:</strong> Public high school seniors planning to enroll full-time at an accredited two- or four-year U.S. college by fall 2027. Minimum 2.5 GPA; additional program criteria apply.</p><p class="small">Up to four annual awards may total $20,000 per recipient, subject to program terms.</p><a class="btn apply" href="https://learnmore.scholarsapply.org/equitableexcellence/" target="_blank" rel="noopener noreferrer">Official details &amp; apply ↗</a></article>
+<article class="card scholarship-card" data-status="future,current,transfer" data-states="all" data-min-gpa="3.3" data-search="point foundation flagship lgbtq ally undergraduate graduate professional 15000 3.3"><div class="meta"><span class="tag verified">Official source checked</span><span class="tag closing">Deadline Nov. 19</span></div><h3>Point Foundation Flagship Scholarship</h3><div class="award">Up to $15,000</div><p class="details"><strong>Deadline:</strong> November 19, 2026, 5 p.m. Pacific / 8 p.m. Eastern<br><strong>Who may apply:</strong> LGBTQ+ students and allies with at least a 3.3 cumulative GPA who are at least high school seniors and pursuing a degree at an accredited, nonprofit U.S. college. Full-time enrollment is required; 100% online programs are ineligible.</p><p class="small">Read the full eligibility rules carefully; this cycle closes very soon.</p><a class="btn apply" href="https://pointfoundation.org/scholarships/flagship" target="_blank" rel="noopener noreferrer">Official details &amp; apply ↗</a></article>
+</div><p id="noScholarships" class="empty-state" hidden>No starter listings match those filters. Try another student status, GPA, or search term. Some scholarships may still be available through the trusted resources below.</p><div class="notice"><strong>Important:</strong> “Official source checked” means we reviewed the provider's published page on November 18, 2026—not that ScholarshipMatch guarantees eligibility, selection, or that the provider has not changed its terms since. We do not collect application documents or charge students. Apply only through the official provider link.</div></div></section>
+<section class="section alt" id="resources"><div class="wrap"><h2>Start with trusted sources</h2><p class="intro">These are established resources and official sites—not invented scholarship listings. Always confirm eligibility, award amounts, and current deadlines on the provider's own page.</p><div class="grid"><article class="card"><div class="symbol">🏛️</div><h3>Federal Student Aid</h3><p>Learn about FAFSA, federal grants, and types of financial aid.</p><a href="https://studentaid.gov/" target="_blank" rel="noopener noreferrer">Visit StudentAid.gov ↗</a></article><article class="card"><div class="symbol">🎓</div><h3>College Board BigFuture</h3><p>Explore scholarship and college-planning resources.</p><a href="https://bigfuture.collegeboard.org/" target="_blank" rel="noopener noreferrer">Visit BigFuture ↗</a></article><article class="card"><div class="symbol">📚</div><h3>CareerOneStop</h3><p>Explore the U.S. Department of Labor's scholarship search tool.</p><a href="https://www.careeronestop.org/Toolkit/Training/find-scholarships.aspx" target="_blank" rel="noopener noreferrer">Explore scholarships ↗</a></article><article class="card" id="stateAgencyCard"><div class="symbol">🗺️</div><h3>Your state's student aid agency</h3><p>Choose your state in the scholarship finder above to see the official state agency and where to start with grants, scholarships, and state aid.</p><a href="https://www.nassgap.org/advocacy-news-history/links-and-resources/" target="_blank" rel="noopener noreferrer">Browse the national state-agency directory ↗</a></article><article class="card"><div class="symbol">🏫</div><h3>Your college's financial aid office</h3><p>Check institutional scholarships, transfer awards, and financial aid appeal procedures.</p><a href="https://www.google.com/search?q=college+financial+aid+office+official" target="_blank" rel="noopener noreferrer">Find your college's office ↗</a></article></div><div class="notice"><strong>Scholarship safety:</strong> Be cautious of guaranteed awards, requests for payment to claim a scholarship, and unexpected requests for sensitive financial information. This site never asks for Social Security numbers or bank details.</div></div></section>
+<section class="section" id="tracker"><div class="wrap"><h2>Keep track of deadlines</h2><p class="intro">Save application deadlines on this device. Your entries remain in this browser unless you clear its site data. Automatic emails and cross-device syncing are not included yet.</p><div class="card"><form class="tracker" id="deadlineForm"><div class="field"><label for="deadlineName">Scholarship or task</label><input id="deadlineName" required maxlength="100" placeholder="e.g., University scholarship application"></div><div class="field"><label for="deadlineDate">Deadline</label><input id="deadlineDate" required type="date"></div><button class="btn" type="submit">Add deadline</button></form><ul class="tracker-list" id="deadlineList" aria-live="polite"></ul><p id="emptyDeadlines" class="small">No deadlines saved yet.</p><button class="btn" type="button" id="calendarBtn" style="display:none">Download calendar reminders (.ics)</button><p class="small">Calendar download creates events with a reminder one day before each deadline. Import the file into a calendar app to receive notifications according to that app's settings.</p></div></div></section>
+
+<section class="section alt" id="save">
+  <div class="wrap">
+    <h2>More ways to lower college costs</h2>
+    <p class="intro">Scholarships are one piece of paying for college. Students and families can often reduce the total bill by comparing the real cost of schools, asking about institutional aid, planning housing and course choices, and understanding which forms of aid must eventually be repaid.</p>
+
+    <div class="callout">
+      <strong>Start with the net price—not the advertised tuition.</strong>
+      A college's published cost is often called its sticker price. Your net price is the amount left after grants and scholarships that you do not have to repay. Compare the full cost of attendance, including tuition, fees, housing, food, books, transportation, and personal expenses.
+      <p><a href="https://collegecost.ed.gov/net-price" target="_blank" rel="noopener noreferrer">U.S. Department of Education: Net Price Calculator Center ↗</a> · <a href="https://studentaid.gov/articles/evaluating-financial-aid-offers/" target="_blank" rel="noopener noreferrer">How to compare financial aid offers ↗</a></p>
+    </div>
+
+    <div class="guide-grid">
+      <article class="guide-card">
+        <h3>1. Complete the FAFSA every year</h3>
+        <p>The Free Application for Federal Student Aid (FAFSA) is the starting point for many federal, state, and college financial aid programs. It is free to submit. Students generally need to complete a new FAFSA for each academic year they want aid.</p>
+        <ul>
+          <li>Use the official <a href="https://studentaid.gov/" target="_blank" rel="noopener noreferrer">StudentAid.gov</a> website—not a paid imitation.</li>
+          <li>Check federal, state, and college deadlines. State and school deadlines can be earlier than the federal deadline.</li>
+          <li>Review your FAFSA Submission Summary and correct errors if needed.</li>
+          <li>Make sure every college you are considering receives your FAFSA information.</li>
+        </ul>
+        <p class="small">FAFSA information helps determine eligibility; it does not guarantee a particular grant or scholarship.</p>
+      </article>
+
+      <article class="guide-card">
+        <h3>2. Ask colleges about more institutional aid</h3>
+        <p>Colleges may have their own merit scholarships, need-based grants, department awards, honors-program awards, emergency grants, and transfer scholarships. Some opportunities require a separate application.</p>
+        <ul>
+          <li>Ask the financial aid office what additional grants or scholarships are available.</li>
+          <li>Ask your academic department about awards for your major or year in school.</li>
+          <li>If your family's financial situation changed—such as job loss, a major medical expense, or a change in income—ask whether the school can review your aid due to special circumstances.</li>
+          <li>Ask whether an outside scholarship changes your existing aid package and how the school applies it.</li>
+        </ul>
+        <p class="small">A polite appeal is not a guarantee of additional aid, but it can be worth asking.</p>
+      </article>
+
+      <article class="guide-card">
+        <h3>3. Compare colleges before committing</h3>
+        <p>A school with a higher sticker price can sometimes cost less after grants and scholarships. Compare the same items for every school and ask whether awards renew in later years.</p>
+        <ul>
+          <li>Use each college's net price calculator as an estimate—not a final financial aid offer.</li>
+          <li>Compare tuition, mandatory fees, housing, meals, books, travel, and other living costs.</li>
+          <li>Check whether scholarships require a minimum GPA, full-time enrollment, or a specific major.</li>
+          <li>Ask how many years an award lasts and what is required to renew it.</li>
+        </ul>
+        <p><a href="https://collegescorecard.ed.gov/" target="_blank" rel="noopener noreferrer">Compare schools with College Scorecard ↗</a></p>
+      </article>
+
+      <article class="guide-card">
+        <h3>4. Explore in-state tuition and residency rules</h3>
+        <p>Public universities often charge different rates for in-state and out-of-state students. Some states and regions have tuition reciprocity or exchange programs, but eligibility rules vary.</p>
+        <ul>
+          <li>Ask the college's residency office which rules apply before assuming you qualify.</li>
+          <li>Check regional exchange programs such as the <a href="https://www.wiche.edu/tuition-savings/wue/" target="_blank" rel="noopener noreferrer">Western Undergraduate Exchange</a> if you are considering participating western states.</li>
+          <li>Ask whether your state has grants that can be used at eligible out-of-state schools.</li>
+          <li>Do not assume moving to a state for college automatically makes you an in-state resident.</li>
+        </ul>
+      </article>
+
+      <article class="guide-card">
+        <h3>5. Consider community college and transfer pathways</h3>
+        <p>Starting at a community college and transferring can reduce costs for some students, especially when they can live at home. The key is making sure credits apply to the intended bachelor's degree.</p>
+        <ul>
+          <li>Ask for a written transfer or articulation agreement when available.</li>
+          <li>Before taking a course, confirm with the receiving college how it will transfer and count toward your major.</li>
+          <li>Compare the total cost of both stages, including fees, transportation, and housing.</li>
+          <li>Ask about transfer scholarships and application deadlines at the destination school.</li>
+        </ul>
+        <div class="warning"><strong>Important:</strong> A course transferring as elective credit does not necessarily mean it satisfies a major requirement. Get the answer from the receiving college in writing.</div>
+      </article>
+
+      <article class="guide-card">
+        <h3>6. Reduce everyday college expenses</h3>
+        <p>Small decisions can add up over multiple semesters. Compare the savings with the time, transportation, and academic impact before choosing an option.</p>
+        <ul>
+          <li>Compare living at home, commuting, residence halls, and off-campus housing.</li>
+          <li>Ask whether you can rent, buy used, borrow, or use free/open educational resources instead of buying every textbook new.</li>
+          <li>Review meal plans and avoid paying for more meals than you realistically use.</li>
+          <li>Use student discounts, public transit, campus resources, and free software when available.</li>
+          <li>Plan course schedules carefully to avoid unnecessary extra semesters—but do not overload yourself to the point that it harms your progress.</li>
+        </ul>
+      </article>
+
+      <article class="guide-card">
+        <h3>7. Look at work, employer benefits, and paid experience</h3>
+        <p>Part-time work, paid internships, co-ops, and employer education benefits may help cover expenses. Federal Work-Study is a job program, not a grant paid automatically to your tuition account.</p>
+        <ul>
+          <li>Ask the financial aid office how work-study jobs are found and how wages are paid.</li>
+          <li>Check whether your employer offers tuition assistance or reimbursement and what conditions apply.</li>
+          <li>Look for paid internships related to your field.</li>
+          <li>Build a realistic school-year work schedule that leaves time for classes and studying.</li>
+        </ul>
+        <p class="small">Do not count on a work-study award as money you already have: you generally must work the hours to earn the wages.</p>
+      </article>
+
+      <article class="guide-card">
+        <h3>8. Ask about payment plans and billing options</h3>
+        <p>Some colleges let students spread a semester bill across installments. A payment plan may help with budgeting, but check enrollment fees, payment dates, missed-payment penalties, and whether the plan charges interest.</p>
+        <ul>
+          <li>Contact the bursar or student accounts office before a bill is due.</li>
+          <li>Ask about installment plans, emergency aid, short-term institutional loans, and payment deadlines.</li>
+          <li>Understand what happens if a balance remains unpaid, including late fees or registration holds.</li>
+          <li>Avoid putting large tuition balances on high-interest credit cards without understanding the cost.</li>
+        </ul>
+      </article>
+    </div>
+
+    <section class="section" style="padding:48px 0 0">
+      <h2>Understanding college debt and student loans</h2>
+      <p class="intro">Loans can make it possible to attend college, but borrowed money is not a scholarship. A loan is money that must be repaid, usually with interest. Students and families should understand who is legally responsible, how interest works, and what repayment could look like before accepting a loan.</p>
+
+      <div class="guide-grid">
+        <article class="guide-card">
+          <h3>What is the difference between aid types?</h3>
+          <ul>
+            <li><strong>Scholarships and grants:</strong> Usually do not need to be repaid if you follow the award rules.</li>
+            <li><strong>Work-study:</strong> Money earned by working in an eligible job; it is not automatically credited as free money.</li>
+            <li><strong>Federal student loans:</strong> Borrowed funds that must be repaid with interest under the loan terms.</li>
+            <li><strong>Private student loans:</strong> Loans from banks, credit unions, or other private lenders. Terms, rates, protections, and cosigner requirements vary.</li>
+            <li><strong>Parent loans:</strong> A parent who borrows is responsible for repaying that loan; it does not automatically become the student's debt.</li>
+          </ul>
+          <p><a href="https://studentaid.gov/understand-aid/types" target="_blank" rel="noopener noreferrer">Federal Student Aid: Types of aid ↗</a></p>
+        </article>
+
+        <article class="guide-card">
+          <h3>Subsidized vs. unsubsidized federal loans</h3>
+          <p><strong>Direct Subsidized Loans</strong> are for eligible undergraduate students with financial need. The federal government generally pays interest during qualifying in-school periods, the grace period, and deferment.</p>
+          <p><strong>Direct Unsubsidized Loans</strong> are not based on financial need. Interest starts accruing after the loan is disbursed, including while the student is in school. If unpaid, interest may capitalize in certain circumstances, increasing the balance on which future interest is calculated.</p>
+          <p><a href="https://studentaid.gov/understand-aid/types/loans/subsidized-unsubsidized" target="_blank" rel="noopener noreferrer">Compare federal loan types ↗</a></p>
+        </article>
+
+        <article class="guide-card">
+          <h3>Understand interest and the total amount borrowed</h3>
+          <p>Interest is the cost of borrowing money. Federal student loan rates are set by loan type and disbursement period; private loan rates and terms depend on the lender and borrower. Fixed rates generally stay the same for that loan, while variable rates can change.</p>
+          <ul>
+            <li>Check the interest rate, origination fees, and amount actually disbursed.</li>
+            <li>Remember that borrowing each semester or year adds to the total balance.</li>
+            <li>Unpaid interest can increase what you owe, depending on the loan and circumstances.</li>
+            <li>Paying accrued interest while in school, if affordable, may reduce the amount that grows.</li>
+          </ul>
+          <p><a href="https://studentaid.gov/understand-aid/types/loans/interest-rates" target="_blank" rel="noopener noreferrer">Check current federal interest rates ↗</a></p>
+        </article>
+
+        <article class="guide-card">
+          <h3>Borrow carefully and compare lenders</h3>
+          <ul>
+            <li>Start with grants and scholarships, then consider savings and earnings, before deciding how much to borrow.</li>
+            <li>Review available federal student loan options before private loans; federal loans generally have standardized protections and repayment options that private loans may not offer.</li>
+            <li>Borrow only what is needed for eligible education costs—not the maximum simply because it is offered.</li>
+            <li>For private loans, compare APR, fixed vs. variable rates, fees, cosigner release, hardship options, and total repayment cost.</li>
+            <li>Make sure the student and any cosigner understand who is responsible if payments are missed.</li>
+          </ul>
+          <div class="warning"><strong>Family reminder:</strong> A parent who signs for a Parent PLUS or private parent loan is the borrower. A student who has a private loan cosigner may also create a legal repayment obligation for that cosigner under the loan contract.</div>
+        </article>
+      </div>
+
+      <div class="card" style="margin-top:22px">
+        <h3>Try a simple student-loan payment estimate</h3>
+        <p class="small">This calculator estimates a fixed-rate loan with equal monthly payments. It is an illustration, not a lender quote. It does not include fees, deferment, changing rates, or special repayment plans.</p>
+        <form class="calculator" id="loanCalc">
+          <div class="field"><label for="loanAmount">Amount borrowed ($)</label><input id="loanAmount" type="number" min="1" max="1000000" step="100" value="20000" required></div>
+          <div class="field"><label for="loanRate">Annual interest rate (%)</label><input id="loanRate" type="number" min="0" max="40" step="0.01" value="6.5" required></div>
+          <div class="field"><label for="loanYears">Repayment period (years)</label><select id="loanYears"><option value="10">10 years</option><option value="15">15 years</option><option value="20">20 years</option></select></div>
+          <div><button class="btn" type="submit">Estimate payment</button></div>
+        </form>
+        <div class="calc-result" id="loanResult" aria-live="polite">
+          <span class="small">Estimated monthly payment</span><br><strong id="monthlyPayment">$227.12</strong>
+          <p id="loanTotal" class="small">Estimated total paid and interest will appear here.</p>
+        </div>
+      </div>
+
+      <div class="callout">
+        <strong>Before accepting a loan, ask:</strong>
+        What is the exact loan type? Who is the borrower? What is the interest rate? Is it fixed or variable? Are there fees? When does interest begin? When do payments start? What repayment options and protections are available? What would the monthly payment be?
+      </div>
+    </section>
+
+    <section class="section" style="padding:48px 0 0">
+      <h2>A first-time college family checklist</h2>
+      <p class="intro">If you are a parent or student navigating college costs for the first time, use this checklist to organize the process.</p>
+      <div class="guide-grid">
+        <article class="guide-card">
+          <h3>Before choosing a college</h3>
+          <ul>
+            <li>Complete the FAFSA and check state and school deadlines.</li>
+            <li>Run each school's net price calculator.</li>
+            <li>Compare grants and scholarships separately from loans and work-study.</li>
+            <li>Ask whether scholarships renew and what GPA or enrollment rules apply.</li>
+            <li>Estimate transportation, housing, meals, books, and personal expenses.</li>
+          </ul>
+        </article>
+        <article class="guide-card">
+          <h3>Before signing or borrowing</h3>
+          <ul>
+            <li>Read the full financial aid offer and identify every loan.</li>
+            <li>Calculate the remaining bill after grants and scholarships.</li>
+            <li>Decide how much can be paid from savings or current income.</li>
+            <li>Estimate the total debt after all planned years—not just the first semester.</li>
+            <li>Discuss openly who is borrowing and who is responsible for repayment.</li>
+          </ul>
+        </article>
+        <article class="guide-card">
+          <h3>Every semester</h3>
+          <ul>
+            <li>Check the student account and financial aid portal.</li>
+            <li>Look for new departmental, local, and continuing-student scholarships.</li>
+            <li>Keep copies of award letters, loan disclosures, and payment receipts.</li>
+            <li>Review spending and update the school-year budget.</li>
+            <li>Contact the aid office early if the bill cannot be paid.</li>
+          </ul>
+        </article>
+        <article class="guide-card">
+          <h3>Know these important terms</h3>
+          <div class="glossary">
+            <div><strong>Cost of attendance</strong><br><span class="small">School's estimated full yearly cost.</span></div>
+            <div><strong>Net price</strong><br><span class="small">Cost minus grants and scholarships.</span></div>
+            <div><strong>Principal</strong><br><span class="small">Original amount borrowed, before interest.</span></div>
+            <div><strong>APR</strong><br><span class="small">Annualized borrowing cost including certain fees.</span></div>
+            <div><strong>Cosigner</strong><br><span class="small">Person who agrees to be responsible under a loan contract.</span></div>
+            <div><strong>Capitalization</strong><br><span class="small">Unpaid interest added to the loan principal.</span></div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <div class="warning">
+      <strong>Important:</strong> ScholarshipMatch provides general educational information, not individualized financial, tax, or legal advice. Financial aid rules, interest rates, deadlines, and repayment programs can change. Always confirm details with your school's financial aid office, the loan servicer, and official government sources before making a decision. Never share your StudentAid.gov password, Social Security number, bank details, or account credentials with ScholarshipMatch.
+    </div>
+
+    <p class="small">Helpful official resources: <a href="https://studentaid.gov/" target="_blank" rel="noopener noreferrer">Federal Student Aid</a> · <a href="https://www.consumerfinance.gov/paying-for-college/" target="_blank" rel="noopener noreferrer">Consumer Financial Protection Bureau: Paying for College</a> · <a href="https://collegecost.ed.gov/" target="_blank" rel="noopener noreferrer">College Affordability and Transparency Center</a> · <a href="https://www.usa.gov/student-aid" target="_blank" rel="noopener noreferrer">USA.gov Student Aid</a>.</p>
+  </div>
+</section>
+
+<section class="section" id="about"><div class="wrap"><h2>Why ScholarshipMatch?</h2><p class="intro">Finding college funding can be overwhelming. ScholarshipMatch is an early, free project designed to make the first steps simpler. We link to trusted resources and provide an on-device deadline tracker. This version includes a small starter directory of individual scholarship listings with official provider links and a last-checked date. Future versions may offer more listings, personalized matching, and optional email reminders.</p><span class="pill">Free early version</span></div></section></main>
+<footer><div class="wrap"><div><strong>ScholarshipMatch</strong><div class="small" style="color:#c4d5e9">An independent student project. Not affiliated with the U.S. Department of Education or any listed organization.</div></div><a href="#home">Back to top ↑</a></div></footer>
+<script>
+(()=>{'use strict';const $=id=>document.getElementById(id);const safe=(s)=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));let activeGpa=null;
+const stateAgencies={
+AL:{name:'Alabama Commission on Higher Education',url:'https://ache.edu/'},
+AK:{name:'Alaska Commission on Postsecondary Education',url:'https://acpesecure.alaska.gov/'},
+AZ:{name:'Arizona Commission for Postsecondary Education',url:'https://highered.az.gov/'},
+AR:{name:'Arkansas Division of Higher Education',url:'https://www.adhe.edu/'},
+CA:{name:'California Student Aid Commission',url:'https://www.csac.ca.gov/'},
+CO:{name:'Colorado Department of Higher Education',url:'https://highered.colorado.gov/'},
+CT:{name:'Connecticut Office of Higher Education',url:'https://www.ohe.ct.gov/'},
+DE:{name:'Delaware Department of Education',url:'https://www.doe.k12.de.us/'},
+DC:{name:'DC Office of the State Superintendent of Education',url:'https://osse.dc.gov/'},
+FL:{name:'Florida Office of Student Financial Assistance',url:'https://www.floridastudentfinancialaid.org/'},
+GA:{name:'Georgia Student Finance Commission',url:'https://gsfc.georgia.gov/'},
+HI:{name:'University of Hawaii System',url:'https://www.hawaii.edu/'},
+ID:{name:'Idaho State Board of Education',url:'https://boardofed.idaho.gov/'},
+IL:{name:'Illinois Student Assistance Commission',url:'https://www.isac.org/'},
+IN:{name:'Indiana Commission for Higher Education',url:'https://www.in.gov/che/'},
+IA:{name:'Iowa College Aid',url:'https://iowacollegeaid.gov/'},
+KS:{name:'Kansas Board of Regents',url:'https://www.kansasregents.org/'},
+KY:{name:'Kentucky Higher Education Assistance Authority',url:'https://www.kheaa.com/'},
+LA:{name:'Louisiana Office of Student Financial Assistance',url:'https://mylosfa.la.gov/'},
+ME:{name:'Finance Authority of Maine',url:'https://www.famemaine.com/'},
+MD:{name:'Maryland Higher Education Commission',url:'https://mhec.maryland.gov/'},
+MA:{name:'Massachusetts Office of Student Financial Assistance',url:'https://www.osfa.mass.edu/'},
+MI:{name:'Michigan Student Aid',url:'https://www.michigan.gov/mistudentaid'},
+MN:{name:'Minnesota Office of Higher Education',url:'https://www.ohe.state.mn.us/'},
+MS:{name:'Mississippi Office of Student Financial Aid',url:'https://www.msfinancialaid.org/'},
+MO:{name:'Missouri Department of Higher Education and Workforce Development',url:'https://dhewd.mo.gov/'},
+MT:{name:'Montana University System',url:'https://mus.edu/'},
+NE:{name:'Nebraska Coordinating Commission for Postsecondary Education',url:'https://ccpe.nebraska.gov/'},
+NV:{name:'Nevada System of Higher Education',url:'https://nshe.nevada.edu/'},
+NH:{name:'New Hampshire Department of Education',url:'https://www.education.nh.gov/'},
+NJ:{name:'New Jersey Higher Education Student Assistance Authority',url:'https://www.hesaa.org/'},
+NM:{name:'New Mexico Higher Education Department',url:'https://hed.nm.gov/'},
+NY:{name:'New York State Higher Education Services Corporation',url:'https://www.hesc.ny.gov/'},
+NC:{name:'North Carolina State Education Assistance Authority',url:'https://www.ncseaa.edu/'},
+ND:{name:'North Dakota University System',url:'https://ndus.edu/'},
+OH:{name:'Ohio Department of Higher Education',url:'https://highered.ohio.gov/'},
+OK:{name:'Oklahoma State Regents for Higher Education',url:'https://www.okhighered.org/'},
+OR:{name:'Oregon Student Aid',url:'https://oregonstudentaid.gov/'},
+PA:{name:'Pennsylvania Higher Education Assistance Agency',url:'https://www.pheaa.org/'},
+RI:{name:'Rhode Island Office of the Postsecondary Commissioner',url:'https://riopc.edu/'},
+SC:{name:'South Carolina Tuition Grants Commission',url:'https://www.sctuitiongrants.org/',extra:'You can also check the South Carolina Commission on Higher Education.' ,extraUrl:'https://www.che.sc.gov/'},
+SD:{name:'South Dakota Board of Regents',url:'https://www.sdbor.edu/'},
+TN:{name:'Tennessee Higher Education Commission / Student Assistance Corporation',url:'https://www.tn.gov/collegepays.html'},
+TX:{name:'Texas Higher Education Coordinating Board',url:'https://www.highered.texas.gov/'},
+UT:{name:'Utah System of Higher Education',url:'https://ushe.edu/'},
+VT:{name:'Vermont Student Assistance Corporation',url:'https://www.vsac.org/'},
+VA:{name:'State Council of Higher Education for Virginia',url:'https://www.schev.edu/'},
+WA:{name:'Washington Student Achievement Council',url:'https://wsac.wa.gov/'},
+WV:{name:'West Virginia Higher Education Policy Commission',url:'https://www.hepc.wvnet.edu/'},
+WI:{name:'Wisconsin Higher Educational Aids Board',url:'https://heab.state.wi.us/'},
+WY:{name:'University of Wyoming',url:'https://www.uwyo.edu/'}
+};
+function renderStateAgency(){
+  const code=$('state').value,card=$('stateAgencyCard');
+  if(!card)return;
+  if(!code||!stateAgencies[code]){
+    card.innerHTML='<div class="symbol">🗺️</div><h3>Your state&#39;s student aid agency</h3><p>Choose your state in the scholarship finder above to see the official state agency and where to start with grants, scholarships, and state aid.</p><a href="https://www.nassgap.org/advocacy-news-history/links-and-resources/" target="_blank" rel="noopener noreferrer">Browse the national state-agency directory ↗</a>';
+    return;
+  }
+  const a=stateAgencies[code],stateName=$('state').selectedOptions[0].textContent;
+  card.innerHTML='<div class="symbol">🗺️</div><h3>'+safe(stateName)+' student aid starting point</h3><p><strong>'+safe(a.name)+'</strong> is the state agency or official education-system starting point listed for '+safe(stateName)+'. Explore its grants, scholarships, residency rules, and state-aid application instructions.</p><a href="'+a.url+'" target="_blank" rel="noopener noreferrer">Visit '+safe(a.name)+' ↗</a>'+(a.extra?'<p class="small">'+safe(a.extra)+' <a href="'+a.extraUrl+'" target="_blank" rel="noopener noreferrer">Visit additional agency ↗</a></p>':'')+'<p class="small">State programs and deadlines change. Confirm current eligibility and deadlines directly with the agency and your college.</p>';
+}
+$('state').addEventListener('change',renderStateAgency);renderStateAgency();$('matchForm').addEventListener('submit',e=>{e.preventDefault();const status=$('status').value,state=$('state').value,goal=$('interest').value,major=$('major').value.trim(),gpa=parseFloat($('gpa').value);if(!state||!Number.isFinite(gpa)||gpa<0||gpa>4)return;activeGpa=gpa;const stateName=$('state').selectedOptions[0].textContent;const items=[['Federal aid and FAFSA','https://studentaid.gov/'],['Scholarship search through CareerOneStop','https://www.careeronestop.org/Toolkit/Training/find-scholarships.aspx'],['Scholarship and college planning through BigFuture','https://bigfuture.collegeboard.org/'],['Browse Scholarship America opportunities and filter by state','https://scholarshipamerica.org/students/browse-scholarships/'],['Official '+stateName+' state student aid agency',stateAgencies[state].url]];if(stateAgencies[state].extra)items.push([stateAgencies[state].extra,stateAgencies[state].extraUrl]);if(status==='transfer'||goal==='transfer')items.push(['Search your destination college’s official transfer scholarships','https://www.google.com/search?q=university+official+transfer+scholarships']);if(goal==='tuition')items.push(['Learn about college net price and financial aid','https://studentaid.gov/understand-aid/how-aid-works']);$('scholarshipStatus').value=status;$('scholarshipState').value=state;filterScholarships();const visible=[...document.querySelectorAll('.scholarship-card')].filter(card=>!card.hidden);const known=visible.filter(card=>card.dataset.minGpa!=='unknown');const unknown=visible.filter(card=>card.dataset.minGpa==='unknown');const r=$('matchResult');r.innerHTML='<strong>Your starting matches</strong><p class="small">Profile: '+(status==='future'?'applying to college':status==='transfer'?'transferring colleges':'currently in college')+' · '+safe(stateName)+' · GPA '+gpa.toFixed(2)+'/4.0'+(major?' · '+safe(major):'')+'. We have shown '+visible.length+' starter listings that fit the student-status filter. '+known.length+' have a published minimum GPA at or below yours; '+unknown.length+' do not state a minimum GPA in our summary and need a closer eligibility check. The matching state agency is shown in Trusted Resources and linked above.</p><p><a class="btn" href="#listings">View matching scholarship listings</a></p><strong>Useful official starting points</strong><ul>'+items.map(([name,url])=>'<li><a href="'+url+'" target="_blank" rel="noopener noreferrer">'+safe(name)+' ↗</a></li>').join('')+'</ul><p class="small">Important: GPA is only one requirement. Residency, financial need, enrollment, citizenship, major, class year, and other rules may apply. We do not decide eligibility; confirm all requirements with the scholarship provider.</p>';r.classList.add('show');r.scrollIntoView({behavior:'smooth',block:'nearest'})});;const key='scholarshipmatch-deadlines-v1';let entries=[];try{const raw=JSON.parse(localStorage.getItem(key)||'[]');if(Array.isArray(raw))entries=raw.filter(x=>x&&typeof x.name==='string'&&/^\d{4}-\d{2}-\d{2}$/.test(x.date)).slice(0,100)}catch{}function save(){try{localStorage.setItem(key,JSON.stringify(entries))}catch{alert('Your browser could not save these deadlines. Check browser storage settings.')}}function draw(){entries.sort((a,b)=>a.date.localeCompare(b.date));const ul=$('deadlineList');ul.innerHTML='';entries.forEach((item,i)=>{const li=document.createElement('li'),info=document.createElement('div'),strong=document.createElement('strong'),sm=document.createElement('small'),btn=document.createElement('button');strong.textContent=item.name;sm.textContent='Due '+new Date(item.date+'T12:00:00').toLocaleDateString(undefined,{year:'numeric',month:'long',day:'numeric'});info.append(strong,document.createElement('br'),sm);btn.className='delete';btn.type='button';btn.textContent='Remove';btn.setAttribute('aria-label','Remove '+item.name);btn.addEventListener('click',()=>{entries.splice(i,1);save();draw()});li.append(info,btn);ul.append(li)});$('emptyDeadlines').style.display=entries.length?'none':'block';$('calendarBtn').style.display=entries.length?'inline-block':'none'}$('deadlineForm').addEventListener('submit',e=>{e.preventDefault();const name=$('deadlineName').value.trim(),date=$('deadlineDate').value;if(!name||!/^\d{4}-\d{2}-\d{2}$/.test(date))return;if(entries.length>=100){alert('This demo supports up to 100 deadlines.');return}entries.push({name,date});save();draw();e.target.reset()});$('calendarBtn').addEventListener('click',()=>{const esc=s=>String(s).replace(/\\/g,'\\\\').replace(/\n/g,'\\n').replace(/,/g,'\\,').replace(/;/g,'\\;');const pad=n=>String(n).padStart(2,'0');const stamp=new Date().toISOString().replace(/[-:]/g,'').replace(/\.\d{3}/,'');let content='BEGIN:VCALENDAR\r\nVERSION:2.0\r\nPRODID:-//ScholarshipMatch//Deadline Tracker//EN\r\nCALSCALE:GREGORIAN\r\n';entries.forEach((x,i)=>{const start=x.date.replace(/-/g,'');const d=new Date(x.date+'T12:00:00');d.setDate(d.getDate()+1);const end=d.getFullYear()+pad(d.getMonth()+1)+pad(d.getDate());content+='BEGIN:VEVENT\r\nUID:scholarshipmatch-'+start+'-'+i+'@local\r\nDTSTAMP:'+stamp+'\r\nDTSTART;VALUE=DATE:'+start+'\r\nDTEND;VALUE=DATE:'+end+'\r\nSUMMARY:'+esc(x.name)+' deadline\r\nBEGIN:VALARM\r\nTRIGGER:-P1D\r\nACTION:DISPLAY\r\nDESCRIPTION:Scholarship deadline tomorrow\r\nEND:VALARM\r\nEND:VEVENT\r\n'});content+='END:VCALENDAR\r\n';const blob=new Blob([content],{type:'text/calendar;charset=utf-8'}),url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download='scholarshipmatch-deadlines.ics';document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),1000)});const searchBox=$('scholarshipSearch'),statusFilter=$('scholarshipStatus'),stateFilter=$('scholarshipState');function filterScholarships(){const q=searchBox.value.trim().toLowerCase(),st=statusFilter.value,selectedState=stateFilter.value;let shown=0;document.querySelectorAll('.scholarship-card').forEach(card=>{const matchesText=!q||(card.dataset.search+' '+card.textContent).toLowerCase().includes(q);const statuses=card.dataset.status.split(',');const matchesStatus=st==='all'||statuses.includes(st);const matchesState=card.dataset.states==='all'||card.dataset.states.split(',').includes(selectedState);const minGpa=card.dataset.minGpa;const matchesGpa=activeGpa===null||minGpa==='unknown'||activeGpa>=Number(minGpa);const visible=matchesText&&matchesStatus&&matchesState&&matchesGpa;card.hidden=!visible;if(visible)shown++});$('noScholarships').hidden=shown>0}searchBox.addEventListener('input',filterScholarships);statusFilter.addEventListener('change',filterScholarships);stateFilter.addEventListener('change',filterScholarships);
+filterScholarships();
+const loanForm=$('loanCalc');
+function updateLoanEstimate(){
+  const principal=Number($('loanAmount').value),annualRate=Number($('loanRate').value)/100,years=Number($('loanYears').value);
+  if(!Number.isFinite(principal)||principal<=0||!Number.isFinite(annualRate)||annualRate<0||!years)return;
+  const months=years*12,monthlyRate=annualRate/12;
+  const payment=monthlyRate===0?principal/months:principal*monthlyRate/(1-Math.pow(1+monthlyRate,-months));
+  const total=payment*months,interest=total-principal;
+  $('monthlyPayment').textContent=payment.toLocaleString('en-US',{style:'currency',currency:'USD'});
+  $('loanTotal').textContent='Estimated total repaid: '+total.toLocaleString('en-US',{style:'currency',currency:'USD'})+' · Estimated interest: '+interest.toLocaleString('en-US',{style:'currency',currency:'USD'})+' over '+years+' years.';
+}
+loanForm.addEventListener('submit',e=>{e.preventDefault();updateLoanEstimate()});
+['loanAmount','loanRate','loanYears'].forEach(id=>$(id).addEventListener('input',updateLoanEstimate));
+updateLoanEstimate();
+draw()})();
+</script></body></html>
